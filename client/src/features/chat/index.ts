@@ -13,7 +13,7 @@ export type ChatInputSentEvent = CustomEvent<{
 }>;
 
 const rootStyle = css`
-  :host > .wrapper {
+  .wrapper {
     position: relative;
     left: 50%;
     transform: translateX(-50%);

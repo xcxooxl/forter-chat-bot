@@ -8,7 +8,7 @@ import {
 } from "../../../../../shared/message.types";
 
 const style = css`
-  :host > .wrapper {
+  .wrapper {
     position: relative;
     display: flex;
     flex-direction: column;

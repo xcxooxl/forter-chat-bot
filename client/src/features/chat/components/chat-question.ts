@@ -11,7 +11,7 @@ const style = css`
     width: 100%;
   }
 
-  :host > .wrapper {
+  .wrapper {
     display: flex;
     align-items: center;
     box-shadow: 0 1px 2px 0 rgba(16, 35, 47, 0.15);

@@ -11,7 +11,7 @@ import { repeat } from "lit-html/directives/repeat.js";
 import { createRef, ref, Ref } from "lit-html/directives/ref.js";
 
 const style = css`
-  :host > .wrapper {
+  .wrapper {
     background-color: var(--light-grey-bg);
     height: calc(100vh - ${headerHeight}px - 70px);
     flex-direction: column;
