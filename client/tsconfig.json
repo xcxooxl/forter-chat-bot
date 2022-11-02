@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "lib": ["es6","dom"],
+    "strict": true,
+    "esModuleInterop": false,
+    "outDir": "dist",
+    "rootDir": "../",
+    "allowJs": true,
+    "experimentalDecorators": true
+  }
+  ,
+  "include": ["./**/*.ts"]
+}
