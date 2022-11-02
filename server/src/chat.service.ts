@@ -152,7 +152,6 @@ class ChatService {
       const answers = firstQuestion._source?.answers
         ?.map((answer, index) => `${index + 1}. ${answer.content}`)
         .join("\n");
-      console.log(answers, "wtffff", firstQuestion);
       this.emit(MessageType.BOT_MESSAGE_SENT, {
         author_id: botUser.id,
         content: `${getAlreadyAnsweredMessage(member)}
