@@ -49,7 +49,6 @@ export class ChatHeader extends LitElement {
       <img class="avatar-photo" src="${this.img}" />
       <div class="group-wrapper">
         <span class="group-name">${this.chatName}</span>
-        <!--        <div class="info"><span class="i18n">bot</span></div>-->
       </div>
     `;
   }
