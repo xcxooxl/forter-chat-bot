@@ -91,7 +91,7 @@ export const elastic = {
         MessagePayloads[MessageType.QUESTION_ASKED]
       >[]) || [];
     hits.sort(
-      (a, b) => a._source?.answers?.length! - b._source?.answers?.length!
+      (a, b) => b._source?.answers?.length! - a._source?.answers?.length!
     );
     return hits;
   },

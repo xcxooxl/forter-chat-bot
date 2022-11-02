@@ -145,7 +145,7 @@ class ChatService {
     this.emit(MessageType.QUESTION_ASKED, question, socket);
     // bot should not answer mock messages..
     const [firstQuestion] = await elastic.searchQuestion(question);
-    if (firstQuestion) {
+    if (firstQuestion && firstQuestion._source?.answers?.length) {
       //todo: this is pretty loose logic between questions => answers,
       // should  probably enable the user to use buttons like telegram, to select a resembling question and only then
       // get the answer
