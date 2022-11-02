@@ -75,6 +75,7 @@ class ChatService {
       socket
     );
 
+    fakeAssignedUser.isConnected = true;
     this.connectedMembers[socket.id] = fakeAssignedUser;
     this.membersMap[fakeAssignedUser.id] = fakeAssignedUser;
 
@@ -121,6 +122,7 @@ class ChatService {
 */
 
   private onDisconnect = (socket: Socket) => () => {
+    this.connectedMembers[socket.id].isConnected = false;
     delete this.connectedMembers[socket.id];
   };
 

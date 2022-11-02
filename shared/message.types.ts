@@ -2,6 +2,7 @@ export interface ChatMember {
   id: number;
   name: string;
   profileImg: string;
+  isConnected: boolean;
 }
 
 export enum MessageType {
