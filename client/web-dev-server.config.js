@@ -20,6 +20,6 @@ export default {
         // Manually imported in index.html file
         webcomponents: false,
       },
-    }),
+    })
   ],
 };

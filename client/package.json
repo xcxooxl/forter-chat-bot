@@ -2,7 +2,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "serve": "wds --watch"
+    "tsc:watch": "tsc --watch",
+    "serve": "concurrently --kill-others --names tsc,web-dev-server \"npm run tsc:watch\" \"web-dev-server --app-index index.html --node-resolve --open --watch\"",
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js"
   },
   "keywords": [
     "web-components",
@@ -11,18 +13,27 @@
     "lit"
   ],
   "dependencies": {
-    "lit": "^2.2.4"
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@types/node": "^18.11.7",
+    "lit": "^2.2.4",
+    "lit-element": "^3.2.2",
+    "typescript": "^4.8.4",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.6.3",
+    "@open-wc/building-rollup": "^2.0.2",
     "@open-wc/testing": "^3.1.5",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
+    "@types/uuid": "^8.3.4",
     "@web/dev-server": "^0.1.31",
     "@web/dev-server-legacy": "^1.0.0",
     "@webcomponents/webcomponentsjs": "^2.6.0",
+    "concurrently": "^7.5.0",
+    "deepmerge": "^4.2.2",
     "lit-analyzer": "^1.2.1",
-    "prettier": "^2.6.2",
+    "prettier": "2.7.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.73.0",
     "rollup-plugin-summary": "^1.4.3",
