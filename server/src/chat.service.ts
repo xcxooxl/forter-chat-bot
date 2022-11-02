@@ -5,9 +5,8 @@ import {
   MessagePayloads,
   MessageType,
 } from "../../shared/message.types";
-import { botUser, getRandomUser, getUserByName, mockUsers } from "./users.mock";
+import { botUser, getRandomUser, mockUsers } from "./users.mock";
 import { getAlreadyAnsweredMessage, getUserJoinMessage } from "./bot-phrases";
-import { mockMessages } from "./messages.mock";
 import { elastic } from "./elastic";
 
 class ChatService {
@@ -91,6 +90,7 @@ class ChatService {
     // this.sendMockMessages(socket);
   };
 
+  /*
   private async sendMockMessages(socket: Socket) {
     const rossGeler = getUserByName("Ross");
     const rachelGreen = getUserByName("Rachel");
@@ -118,6 +118,7 @@ class ChatService {
       }
     }
   }
+*/
 
   private onDisconnect = (socket: Socket) => () => {
     delete this.connectedMembers[socket.id];
@@ -129,9 +130,9 @@ class ChatService {
     socket?: Socket
   ) => {
     payload.author_id = member.id;
-    await this.emit(MessageType.QUESTION_ANSWERED, payload, socket);
-    elastic.storeAnswer(payload);
+    this.emit(MessageType.QUESTION_ANSWERED, payload, socket);
     //save to elastic..
+    elastic.storeAnswer(payload);
   };
 
   private onNewQuestion = async (
